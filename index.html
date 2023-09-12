@@ -15,7 +15,7 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="https://kit.fontawesome.com/98b00f82ed.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/98b00f82ed.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
@@ -47,10 +47,10 @@
               <div class="target-city-image">
                 <img class="today" src="https://cdn3d.iconscout.com/3d/premium/thumb/sun-and-cloud-3715214-3105197.png" />
                 <span class="temperature"> 
-                  <span id="content">19</span> 
-                  <a id="temperature_Cel" href="#">C</a>
-                  <span>|</span>
-                  <a id="temperature_Far" href="#">F</a>
+                  <span id="content"> 19 </span> 
+                  <span id="temperature_Cel" > C </span>
+                  <span> | <a id="temperature_Far" href="#"> F </a> </span>
+                  <!-- <a id="temperature_Far" href="#">F</a> -->
                 
                 </span>
               </div>
@@ -58,17 +58,17 @@
 
             <div class="col-4">
                 <ul class="detail">
-                  <li> Precipitation: 0% </li>
-                  <li> Humidity: 17% </li>
-                  <li> Wind: 14 km/h </li>
+                  <!-- <li> Precipitation: 0% </li> -->
+                  <li class="humidity"> Humidity : 17% </li>
+                  <li class="windspeed"> Wind: 14 km/h </li>
                 </ul>
             </div>
 
             <div  class="col-4">
               <ul class="general">
               <li > <strong>  Weather </strong> </li>
-              <li id = "day"> Tuesday 12:00 </li>
-              <li> Mostly sunny </li>
+              <!-- <li id = "day"> Tuesday 12:00 </li> -->
+              <li class = "description"> Mostly sunny </li>
               </ul>
             </div>
           </div>
@@ -76,8 +76,6 @@
 
       </div>
     </div>
-
-    <script>
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>
