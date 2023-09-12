@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>weather wireframe</title>
+    <!-- <link href="plus_week2_hw_css.css" rel="stylesheet" /> -->
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://kit.fontawesome.com/98b00f82ed.js" crossorigin="anonymous"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-container">
+        <div class="search-icon">
+          <form class="my-form">
+            <input
+              class="my-city"
+              type="text"
+              id="my-city"
+              placeholder="Enter a city"
+            />
+            <input
+              id="submit-button"
+              type="submit"
+              class="btn"
+              value="Search"
+            />
+          </form>
+          <button id="current-button" class="btn" >Current</button>
+        </div>
+
+        <div class="weather-info">
+          <div id="info" class="row">
+            <div class="col-4">
+              <h3 class="target-city">Tehran</h3>
+              <div class="target-city-image">
+                <img class="today" src="https://cdn3d.iconscout.com/3d/premium/thumb/sun-and-cloud-3715214-3105197.png" />
+                <span class="temperature"> 
+                  <span id="content">19</span> 
+                  <a id="temperature_Cel" href="#">C</a>
+                  <span>|</span>
+                  <a id="temperature_Far" href="#">F</a>
+                
+                </span>
+              </div>
+            </div>
+
+            <div class="col-4">
+                <ul class="detail">
+                  <li> Precipitation: 0% </li>
+                  <li> Humidity: 17% </li>
+                  <li> Wind: 14 km/h </li>
+                </ul>
+            </div>
+
+            <div  class="col-4">
+              <ul class="general">
+              <li > <strong>  Weather </strong> </li>
+              <li id = "day"> Tuesday 12:00 </li>
+              <li> Mostly sunny </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+    </script>
+  </body>
+</html>
