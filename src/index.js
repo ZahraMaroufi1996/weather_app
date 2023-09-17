@@ -1,5 +1,3 @@
-
-let current_cel_temp = null;
 let days = [
     "Sunday",
     "Monday",
@@ -14,7 +12,7 @@ let days = [
   searchForm.addEventListener("submit", showCity);
   
   let current_cel_temp = null;
-  
+
   let my_far = document.querySelector("#temperature_Far");
   my_far.addEventListener("click", convert_to_far);
   
@@ -32,7 +30,7 @@ let days = [
   }
   
   function showtemp(response) {
-  console.log(response);
+//   console.log(response);
   let my_temp = document.querySelector("#content");
   current_cel_temp = Math.round(response.data.main.temp);
   my_temp.innerHTML = `${current_cel_temp}`;
@@ -40,17 +38,14 @@ let days = [
   
   let description_tag = document.querySelector(".description");
   let description = response.data.weather[0].description;
-  // console.log(description);
   description_tag.innerHTML = `${description}`;
   
   let wind_speed_tag = document.querySelector(".windspeed");
   let wind_speed = Math.round(response.data.wind.speed * 3.6);
-  // console.log(wind_speed);
   wind_speed_tag.innerHTML = `wind : ${wind_speed} km/h`;
   
   let humidity_tag = document.querySelector(".humidity");
   let humidity = Math.round(response.data.main.humidity);
-  // console.log(humidity);
   humidity_tag.innerHTML = `humidity : ${humidity}%`;
   
   set_current_time(response.data.dt);
@@ -62,15 +57,11 @@ let days = [
   }
   
   function setforecast(response){
-  console.log(response.data.coord);
+//   console.log(response.data.coord);
   let lat = response.data.coord.lat ;
   let lon = response.data.coord.lon ;
   let id =  response.data.id
-  console.log(id);
-  console.log(lat);
-  console.log(lon);
   let key = "b35c686ba9565ba0ab254c2230937552" ;
-  // let key = "87a3a2150aa49253a7b9c970848257a6"
   let forecast_url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
   // let forecast_url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${key}`
   // let forecast_url = `http://api.openweathermap.org/data/3/forecast?id=${id}&appids=${key}`
@@ -83,16 +74,14 @@ let days = [
   }
   
   function showforecast(response){
-  console.log(response);
+//   console.log(response);
   let my_forecast_div = document.querySelector(".future-prediction");
   let forecastHTML = `<div id = "future" class="row">` ;
-  // my_div.innerHTML = x + my_div.innerHTML ;
   let forecast = response.data.daily ;
-  console.log(forecast);
+//   console.log(forecast);
   forecast.forEach((item, i) => {
     if (i < 5)
     {
-      // console.log(item.weather[0].icon);
       forecastHTML = forecastHTML +
       ` <div class="col-2">
         <div class="row"><h3 class="future">${nextdays(item.dt)}</h3></div>
@@ -134,7 +123,6 @@ let days = [
     event.preventDefault();
     let cel_tag = document.querySelector("#content");
     let far = Math.round((9 / 5) * current_cel_temp + 32);
-    // console.log(far);
     cel_tag.innerHTML = `${far}`;
   }
   
