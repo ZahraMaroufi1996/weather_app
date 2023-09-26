@@ -23,18 +23,16 @@ let days = [
     let cityInput = document.querySelector("#my-city");
     let my_h3 = document.querySelector("h3.target-city");
     my_h3.innerHTML = `${cityInput.value}`
-   let apiKey = "87a3a2150aa49253a7b9c970848257a6";
-   let  q = cityInput.value;
-   let url = `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&appid=${apiKey}`;
-   axios.get(url).then(showtemp);
+    let apiKey = "87a3a2150aa49253a7b9c970848257a6";
+    let  q = cityInput.value;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&appid=${apiKey}`;
+    axios.get(url).then(showtemp);
   }
   
   function showtemp(response) {
-//   console.log(response);
   let my_temp = document.querySelector("#content");
   current_cel_temp = Math.round(response.data.main.temp);
   my_temp.innerHTML = `${current_cel_temp}`;
-  
   
   let description_tag = document.querySelector(".description");
   let description = response.data.weather[0].description;
@@ -57,28 +55,19 @@ let days = [
   }
   
   function setforecast(response){
-//   console.log(response.data.coord);
   let lat = response.data.coord.lat ;
   let lon = response.data.coord.lon ;
   let id =  response.data.id
   let key = "b35c686ba9565ba0ab254c2230937552" ;
   let forecast_url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
-  // let forecast_url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${key}`
-  // let forecast_url = `http://api.openweathermap.org/data/3/forecast?id=${id}&appids=${key}`
-  // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-  // o diferent services:
-  // 1- api.openweathermap.org/data/2.5/weather?lat=10.9883696&lon=-74.8051523&units=metric&appid=xxxxxxxxxxxxxxxxxxxx
-  //
-  // 2- api.openweathermap.org/data/2.5/forecast?APPID=xxxxxxxxxxxxxxxxxxx&lat=10.9883696&lon=-74.8051523&units=metric
   axios.get(forecast_url).then(showforecast);
   }
   
   function showforecast(response){
-//   console.log(response);
+
   let my_forecast_div = document.querySelector(".future-prediction");
   let forecastHTML = `<div id = "future" class="row">` ;
   let forecast = response.data.daily ;
-//   console.log(forecast);
   forecast.forEach((item, i) => {
     if (i < 5)
     {
@@ -108,12 +97,12 @@ let days = [
     let my_day = document.querySelector("#day")
     if (my_hour < 10)
     {
-     my_hour = `0${my_hour}`;
+       my_hour = `0${my_hour}`;
     }
   
     if (my_min < 10)
     {
-     my_min = `0${my_min}`;
+      my_min = `0${my_min}`;
     } 
     my_day.innerHTML = `${days[my_date.getDay()]}  ${my_hour} : ${my_min}`  
   }
